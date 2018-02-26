@@ -1,0 +1,8 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<form>
+  <input type="text" name="name" [(ngModel)]="name">
+  <input type="email" name="email" [formControl]="email">
+  <p id="status">{{email.status}}</p>
+  <input type="submit">
+</form>
+
