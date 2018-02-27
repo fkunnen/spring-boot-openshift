@@ -18,3 +18,6 @@ intent:
 - openshift (minishift)
 - Docker 
 - Jenkins pipeline
+
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/30ec9083fd7238541ed40a1b51047295.svg?columns=all)](https://waffle.io/cegeka/imonit)
+
