@@ -6,9 +6,11 @@ buildscript {
 		mavenCentral()
 		maven { url "https://repo.spring.io/snapshot" }
 		maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://plugins.gradle.org/m2/" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.19.2"
 	}
 }
 
@@ -20,6 +22,14 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.cegeka.imonit'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 9
+
+apply plugin: 'com.palantir.docker'
+
+docker {
+    name "${project.group}/${jar.baseName}"
+    files jar.archivePath
+    buildArgs(['JAR_FILE': "${jar.archiveName}"])
+}
 
 repositories {
 	mavenCentral()
