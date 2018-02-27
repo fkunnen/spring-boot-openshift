@@ -10,7 +10,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath "gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.19.2"
+        classpath("gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.19.2")
 	}
 }
 
@@ -18,12 +18,12 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.palantir.docker'
 
 group = 'com.cegeka.imonit'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 9
 
-apply plugin: 'com.palantir.docker'
 
 docker {
     name "${project.group}/${jar.baseName}"

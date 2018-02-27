@@ -1,4 +1,4 @@
-FROM openjdk:9.0-jdk
+FROM openjdk:9-jdk-slim
 VOLUME /tmp
 ARG JAR_FILE
 ADD ${JAR_FILE} app.jar
