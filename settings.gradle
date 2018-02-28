@@ -1,0 +1,4 @@
+rootProject.name = 'Imonit'
+
+include 'imonit-api'
+include 'imonit-ui'
