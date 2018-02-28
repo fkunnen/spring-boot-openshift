@@ -55,7 +55,7 @@ The mysql is encapsulated now in Openshift and not directly accessible.
 
 To be able to connect on it from your local machine you'll have to set up port forwarding and then you'll be able to connect
 
-Port-forwarding: (mysql-1-l55n7k = Pod name)
+Port-forwarding: (mysql-1-l55n7 = Pod name)
 ```
 oc port-forward mysql-1-l55n7 3307:3306
 ```
