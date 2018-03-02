@@ -1,5 +1,6 @@
 FROM openjdk:9-jdk-slim
+MAINTAINER frank_kunnen@hotmail.com
 VOLUME /tmp
-ARG JAR_FILE
-ADD ${JAR_FILE} app.jar
+
+ADD build/libs/spring-boot-openshift.jar app.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]

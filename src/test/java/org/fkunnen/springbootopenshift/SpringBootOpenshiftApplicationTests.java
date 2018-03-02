@@ -1,4 +1,4 @@
-package com.cegeka.imonit.api;
+package org.fkunnen.springbootopenshift;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ImonitApiApplicationTests {
+public class SpringBootOpenshiftApplicationTests {
 
 	@Test
 	public void contextLoads() {

@@ -15,7 +15,6 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'war'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.palantir.docker'
@@ -46,11 +45,6 @@ dependencies {
 
 clean {
     delete "${rootDir}/imonit-api/out"
-}
-
-war {
-    baseName = 'imonit-app'
-    archiveName = 'imonit-api.war'
 }
 
 docker {

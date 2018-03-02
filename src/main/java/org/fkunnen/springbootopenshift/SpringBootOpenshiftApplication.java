@@ -1,11 +1,11 @@
-package com.cegeka.imonit.api;
+package org.fkunnen.springbootopenshift;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ImonitApiApplication {
+public class SpringBootOpenshiftApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ImonitApiApplication.class, args);
+		SpringApplication.run(SpringBootOpenshiftApplication.class, args);
 	}
 }
