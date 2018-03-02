@@ -1,23 +1,36 @@
-# I'm on it!
+# Spring boot openshift
 
-This is the repository for the I'm on it! project.
-The I'm on it project is intended to help voluntary organisations with organising their efforts.
+Hosting of a small Spring boot project with a dockerfile build strategy and using binary builds
 
-intent:
-- a person (or organisation) registers an event they want to "organise"
-- this person is the organiser and adds tasks to the event, and shares the event with people they know
-- the people that receive the event link can claim tasks created by the organiser, thus participating in the event
+### Prerequisites
+- Minishift start
+- Openshift command line installed
 
-### stack
-- Java 9
-- Gradle
-- Angular
-- MySQL
+### Build
+```
+./gradlew build
+```
 
-### technologies
-- openshift (minishift)
-- Docker 
-- Jenkins pipeline
-
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/30ec9083fd7238541ed40a1b51047295.svg?columns=all)](https://waffle.io/cegeka/imonit)
+### Openshift
+- Login
+- New project
+```
+oc new-project sbo
+```
+- New build
+```
+oc new-build --name=sbo --strategy=docker --binary
+```
+- Start build
+```
+oc start-build sbo --from-dir . --follow
+```
+- New app
+```
+oc new-app sbo
+```
+- Expose service
+```
+oc expose svc/sbo
+```
 
