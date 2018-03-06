@@ -72,7 +72,7 @@ objects:
                 steps {
                   git branch: 'master', url: 'https://github.com/fkunnen/spring-boot-openshift.git'
                   script {
-                    version = 1
+                    version = sh(returnStdout: true, script: "git rev-list HEAD --count").trim()
                     sh "./gradlew clean build"
                   }
                 }
