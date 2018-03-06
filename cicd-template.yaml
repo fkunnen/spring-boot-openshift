@@ -73,19 +73,15 @@ objects:
                   git branch: 'master', url: 'https://github.com/fkunnen/spring-boot-openshift.git'
                   script {
                     version = 1
-                    sh "./gradlew build"
+                    sh "./gradlew clean build"
                   }
                 }
               }
               stage('Test') {
-                steps {
-                  try {
-                    sh "./gradlew test"
-                  } catch(err) {
+                  steps {
+                      sh "./gradlew test"
                       step([$class: 'JUnitResultArchiver', testResults: '**/test-results/test/TEST-*.xml'])
-                      throw err
                   }
-                }
               }
               stage('Create Image Builder') {
                 when {
@@ -109,7 +105,7 @@ objects:
               }
               stage('Build Image') {
                 steps {
-                  
+
                   script {
                     openshift.withCluster() {
                       openshift.withProject(env.DEV_PROJECT) {
