@@ -1,4 +1,4 @@
-FROM openjdk:9-jdk-slim
+FROM openjdk:8u151-jre-alpine3.7
 MAINTAINER frank_kunnen@hotmail.com
 VOLUME /tmp
 

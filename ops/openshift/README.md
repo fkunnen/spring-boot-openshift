@@ -14,9 +14,9 @@ oc login https://192.168.64.2:8443 --token=GhHUGSo7SW2lLlJV1rDCvGvJC6JrNG3s5akAQ
 
 #### Create project
 ```
-oc new-project imonit \
-    --description="Im on it" \
-    --display-name="Im on it"
+oc new-project sbo \
+    --description="Spring boot openshift" \
+    --display-name="Spring boot openshift"
 ```
 
 #### Add MySql with persistent volume template to OpenShift
@@ -37,10 +37,10 @@ Seems ok by default on MiniShift
 #### New MySql Application from template with parameters
 ```
 oc new-app mysql-persistent \
-    -p MYSQL_USER=IMONIT \
-    -p MYSQL_PASSWORD=IMONIT \
-    -p MYSQL_ROOT_PASSWORD=IMONIT_ROOT \
-    -p MYSQL_DATABASE=IMONIT \
+    -p MYSQL_USER=DB_USER \
+    -p MYSQL_PASSWORD=DB_PWD \
+    -p MYSQL_ROOT_PASSWORD=DB_PWD_ROOT \
+    -p MYSQL_DATABASE=DB \
     -p MYSQL_VERSION=5.7 \
     -p VOLUME_CAPACITY=1Gi
 ```
@@ -61,7 +61,7 @@ oc port-forward mysql-1-l55n7 3307:3306
 ```
 Then connect to the database from command line:
 ```
-mysql -u IMONIT -pIMONIT -h 127.0.0.1 -P3307 IMONIT
+mysql -u DB_USER -pDB_PWD -h 127.0.0.1 -P3307 DB
 ```
 
 It's also possible to connect to the database from the Openshift web console.
