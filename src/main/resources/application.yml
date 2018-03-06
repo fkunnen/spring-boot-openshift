@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/imonitdb
-    username: developer
-    password: developer
+    url: "jdbc:mysql://${MYSQL_SERVICE_HOST:localhost}:${MYSQL_SERVICE_PORT_MYSQL:3306}/${MYSQL_DATABASE:imonitdb}"
+    username: ${MYSQL_USER:developer}
+    password: ${MYSQL_PASSWORD:developer}
     driverClassName: com.mysql.jdbc.Driver
 
   jpa:
