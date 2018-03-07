@@ -50,7 +50,7 @@ oc new-app mysql-persistent \
     -p MYSQL_USER=developer \
     -p MYSQL_PASSWORD=developer \
     -p MYSQL_ROOT_PASSWORD=root \
-    -p MYSQL_DATABASE=imonitdb \
+    -p MYSQL_DATABASE=testdb \
     -p MYSQL_VERSION=5.7 \
     -p VOLUME_CAPACITY=1Gi
 ```
@@ -72,7 +72,7 @@ oc port-forward mysql-1-l55n7 3307:3306
 ```
 Then connect to the database from command line:
 ```
-mysql -u IMONIT -pIMONIT -h 127.0.0.1 -P3307 IMONIT
+mysql -u develoepr -pdeveloper -h 127.0.0.1 -P3307 testdb
 ```
 
 It's also possible to connect to the database from the Openshift web console.
@@ -86,13 +86,13 @@ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $HOSTNAME $MYSQL_DATABASE
 
 ## Create test table
 
-After connecting to the database you can select the imonitdb database.
+After connecting to the database you can select the testdb database.
 
 ```
-use imonitdb
+use testdb
 ```
 
-AFter switching to imonitdb create the test-table
+AFter switching to testdb create the test-table
 
 ```
 CREATE TABLE test (name VARCHAR(255));
@@ -101,7 +101,7 @@ CREATE TABLE test (name VARCHAR(255));
 Insert a name in the table
 
 ```
-INSERT INTO test (name) VALUES ("Wietse");
+INSERT INTO test (name) VALUES ("John Doe");
 ```
 
 Verify your name is added to the table and the table exists.
@@ -112,10 +112,10 @@ SELECT * FROM test;
 
 ## Make the application run local and remote
 
-To make the application run in your local environment, connect to your local MySql installation and create the database imonitdb
+To make the application run in your local environment, connect to your local MySql installation and create the database testdb
 
 ```
-CREATE DATABASE imonitdb;
+CREATE DATABASE testdb;
 ```
 
 Now you can repeat the steps from the Create test table section.
