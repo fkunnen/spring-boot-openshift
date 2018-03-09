@@ -11,5 +11,5 @@ oc new-app jboss/keycloak-openshift -e KEYCLOAK_USER=developer -e KEYCLOAK_PASSW
 
 To create a route for keycloak-openshift
 ````
-oc create route edge --service=keycloak-openshift
+oc expose service keycloak-openshift --port=8080-tcp
 ````
