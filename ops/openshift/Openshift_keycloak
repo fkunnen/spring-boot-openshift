@@ -1,0 +1,15 @@
+# Run keycloak on OpenShift
+
+To retrieve the image from docker hub:
+```
+docker pull jboss/keycloak-openshift
+```
+To create a new app and deploy the retrieved dockerimage
+````
+oc new-app jboss/keycloak-openshift -e KEYCLOAK_USER=developer -e KEYCLOAK_PASSWORD=developer -e MYSQL_DATABASE=keycloakUserDb -e MYSQL_USER=developer -e MYSQL_PASSWORD=developer
+````
+
+To create a route for keycloak-openshift
+````
+oc create route edge --service=keycloak-openshift
+````
