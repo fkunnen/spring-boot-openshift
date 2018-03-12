@@ -4,25 +4,14 @@ spring:
     username: ${MYSQL_USER:developer}
     password: ${MYSQL_PASSWORD:developer}
     driverClassName: com.mysql.jdbc.Driver
-
   jpa:
     hibernate.ddl-auto: update
     show-sql: true
+server:
+  port: 8081
 
 logging:
   level:
     org:
       hibernate:
         type: trace
-
-spring:
-  profiles: development
-  datasource:
-    url: "jdbc:mysql://localhost:3306/imonitdb"
-    username: root
-    password: root
-    driverClassName: com.mysql.jdbc.Driver
-
-  jpa:
-    hibernate.ddl-auto: update
-    show-sql: true
