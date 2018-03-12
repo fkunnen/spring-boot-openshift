@@ -1,16 +1,10 @@
 spring:
   datasource:
-    url: jdbc:mysql://mysql:3306/testdb
-    username: ${MYSQL_USER:developer}
-    password: ${MYSQL_PASSWORD:developer}
+    url: "jdbc:mysql://localhost:3306/imonitdb"
+    username: root
+    password: root
     driverClassName: com.mysql.jdbc.Driver
 
   jpa:
     hibernate.ddl-auto: update
     show-sql: true
-
-logging:
-  level:
-    org:
-      hibernate:
-        type: trac
