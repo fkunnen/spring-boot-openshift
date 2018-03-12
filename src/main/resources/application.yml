@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: "jdbc:mysql://${MYSQL_SERVICE_HOST:localhost}:${MYSQL_SERVICE_PORT_MYSQL:3306}/${MYSQL_DATABASE:testdb}"
+    url: jdbc:mysql://mysql:3306/testdb
     username: ${MYSQL_USER:developer}
     password: ${MYSQL_PASSWORD:developer}
     driverClassName: com.mysql.jdbc.Driver
@@ -13,4 +13,4 @@ logging:
   level:
     org:
       hibernate:
-        type: trace
+        type: trac
